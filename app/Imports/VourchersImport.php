@@ -16,7 +16,7 @@ class VourchersImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new Vourchers([
-            'vourcher'     => $row['vourcher'],
+            'vourcher'     => $row['voucher'],
             'amount'    => $row['amount'],
             'status'    => $row['status'],
             'user_assigned'    => $row['user'],

@@ -27,7 +27,7 @@ class VourcherListTable extends Table
     {
         return [
             TD::make('id', 'ID')->render(fn (Vourchers $vourchers) => $vourchers->id),
-            TD::make('vourcher', 'Vourcher Code')->render(fn (Vourchers $vourchers) => $vourchers->vourcher),
+            TD::make('voucher', 'Vourcher Code')->render(fn (Vourchers $vourchers) => $vourchers->vourcher),
             TD::make('amount', 'Amount')->render(fn (Vourchers $vourchers) => $vourchers->amount),
             TD::make('user_assigned', 'User')->render(fn (Vourchers $vourchers) => $vourchers->user_assigned),
             TD::make('status', 'Status')->render(fn (Vourchers $vourchers) => $vourchers->status),
