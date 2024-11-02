@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\VourcherRequest;
+use App\Models\VoucherNotSend;
 use App\Models\Vourchers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -56,11 +57,16 @@ class VourcherController extends Controller
                 $data->user_assigned = $phone;
                 $data->save();
                 return ResponseController::responseSuccess("ok",$data);
+            }else{
+                VoucherNotSend::create([
+                    'phone' => $phone,
+                    'amount' => $amount,
+                ]);
+                return ResponseController::responseSuccess("ok",$data);
             }
-        } catch (\Exception $exception) {
+        } catch (\Throwable $exception) {
             return ResponseController::responseError($exception->getMessage());
         }
-
     }
 
     public function sendSMSMobile($phone,$msg){
