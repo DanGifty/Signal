@@ -75,7 +75,7 @@ class VourcherController extends Controller
         $url = $endPoint . '?key=' . $apiKey;
         $data = [
             'recipient'=>[$phone],
-            'sender'=>'Signal_WiFi',
+            'sender'=>'SIGNALGHANA',
             'message'=>$msg,
             'is_schedule'=>'false',
             'schedule_date'=>''

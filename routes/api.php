@@ -8,4 +8,4 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // })->middleware('auth:sanctum');
 
-Route::get('fetchwhensuccess',[VourcherController::class,'fetchOnWhenSuccess']);
+
