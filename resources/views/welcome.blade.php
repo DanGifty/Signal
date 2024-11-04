@@ -20,81 +20,68 @@
         <script src="sql-wasm.js"></script>
     </head>
     <body class="portal">
-        <div class="logo-img">
-          <!-- <img class="logo" src="portalLogo_picture@2x.png"> -->
-          <img class="mx-auto d-block img-fluid mt-2" src="{{ asset('bkg.png') }}"  style="width: 120px; height: auto; margin-bottom: 10px; border-radius: 5px;">
-        </div>
+            <div class="logo-img">
 
-
-          {{-- <div class="oper-section-outer" style="border: 1px solid #ccc;width: 60%;margin: 0 auto;border-radius: 15px;">
-              <div class="oper-section-inner">
-                  <span id="oper-hint" style="color: red"></span>
-                  <div id="hotspot-section">
-                      <select id="hotspot-selector" class="oper-section-item" style="display:none;"></select>
-                  </div>
-                  <form id="login-form" style="margin: 0 auto;width: 80%;margin-top: 20px;margin-bottom: 20px;">
-                      <div id="input-voucher" style="margin-bottom: 20px;">
-                          <input id="voucherCode" class="form-control text-center text-lg" name="voucherCode" type="text" placeholder="Voucher Code" />
-                      </div>
-                  </form>
-                  <div id="button-area">
-                    <button id="button-login" class="btn btn-block btn-warning btn-lg text-white">LOGIN</button>
-                </div>
-
-              </div>
-          </div> --}}
-          <br>
-          <div class="container">
-            <div class="row justify-content-center p-3">
-              <div class="card card-outline card-tabs" style="width: 480px; border-radius: 15px;">
-                  <div class="card-header p-0 pt-1 border-bottom-0 ml-2">
-                      <ul class="nav nav-tabs" id="klcis-tab" role="tablist">
-                          <li class="nav-item">
-                          <a class="nav-link active" id="voucher-tab" data-toggle="pill" href="#voucher" role="tab" aria-controls="voucher" aria-selected="true">Make Payment</a>
-                          </li>
-                      </ul>
-                </div>
-
-                <div class="card-body">
-                    <div class="tab-contentr" id="klcis-tabContent">
-                    <div class="tab-pane fade show active" id="voucher" role="tabpanel" aria-labelledby="voucher-tab">
-                      <form id="paymentForm">
-                          <div class="form-group mt-3">
-                            <label for="phone" class="text-muted text-sm">Phone Number</label>
-                            <input type="text" id="phone" class="form-control text-center text-lg" required />
-                          </div>
-                            <div class="form-group mt-3">
-                              <label for="email" class="text-muted text-sm text-left">Email Address</label>
-                              <input type="email" id="email"  class="form-control text-center text-lg"  />
-                            </div>
-
-                            <div class="form-group mt-3">
-                                  <label class="text-muted text-sm" for="amount">Select Package:</label>
-                                  <select id="amount" required  class="form-control text-lg btn-block">
-                                  {{-- <option value="3">Ghs3.00 for 2GB Expires after 24hrs</option> --}}
-                                  <option value="5">Ghs5.00 for 3GB Valid for 24hrs</option>
-                                  <option value="5">Gha10 for 7GB valid for 48hrs</option>
-                                  <option value="5">Ghs10.00 for Unlimited access for 24hrs</option>
-                                  <option value="60">Ghs65.00 for Unlimited access for 1 week</option>
-                                  <option value="220">Ghs150.00 for 100GB  for 30days</option>
-                                  </select>
-                            </div>
-                            <button type="button" onclick="payWithPaystack()"  class="btn btn-md btn-primary btn-block rounded-pill">Pay</button>
-
-                      </form>
+            <img class="mx-auto d-block img-fluid mt-2" src="{{ asset('bkg.png') }}"  style="width: 120px; height: auto; margin-bottom: 10px; border-radius: 5px;">
+            </div>
+            <br>
+            <div class="container">
+                <div class="row justify-content-center p-3">
+                <div class="card card-outline card-tabs" style="width: 480px; border-radius: 15px;">
+                    <div class="card-header p-0 pt-1 border-bottom-0 ml-2">
+                        <ul class="nav nav-tabs" id="klcis-tab" role="tablist">
+                            <li class="nav-item">
+                            <a class="nav-link active" id="voucher-tab" data-toggle="pill" href="#voucher" role="tab" aria-controls="voucher" aria-selected="true">Make Payment</a>
+                            </li>
+                        </ul>
                     </div>
+
+                    <div class="card-body">
+                        <div class="tab-contentr" id="klcis-tabContent">
+                        <div class="tab-pane fade show active" id="voucher" role="tabpanel" aria-labelledby="voucher-tab">
+                        <form id="paymentForm">
+                            <div class="form-group mt-3">
+                                <label for="phone" class="text-muted text-sm">Phone Number</label>
+                                <input type="text" id="phone" class="form-control text-center text-lg" required />
+                            </div>
+                                <div class="form-group mt-3">
+                                <label for="email" class="text-muted text-sm text-left">Email Address</label>
+                                <input type="email" id="email"  class="form-control text-center text-lg"  />
+                                </div>
+
+                                <div class="form-group mt-3">
+                                    <label class="text-muted text-sm" for="amount">Select Package:</label>
+                                    <select id="amount" required  class="form-control text-lg btn-block">
+                                    {{-- <option value="3">Ghs3.00 for 2GB Expires after 24hrs</option> --}}
+                                    <option value="5">Ghs5.00 for 3GB Valid for 24hrs</option>
+                                    <option value="5">Gha10 for 7GB valid for 48hrs</option>
+                                    <option value="5">Ghs10.00 for Unlimited access for 24hrs</option>
+                                    <option value="60">Ghs65.00 for Unlimited access for 1 week</option>
+                                    <option value="220">Ghs150.00 for 100GB  for 30days</option>
+                                    </select>
+                                </div>
+                                <button type="button" onclick="payWithPaystack()"  class="btn btn-md btn-primary btn-block rounded-pill">Pay</button>
+
+                        </form>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="text-center">
+                            <a href="javascript:" class="text-muted text-sm">For Vourchers and Enquires contact : <b>050 557 6038</b></a>
+                            <hr>
+                            <div style="font-size: 9px"><a href="mailto:dankwaprince@gmail.com">System Powered by <b>DANKOFF</b></a></div>
+                        </div>
                     </div>
                 </div>
-                <div class="card-footer">
-
                 </div>
             </div>
-          </div>
-        </div>
+
           <script src="{{ asset('index.js') }}"></script>
           <script src="{{ asset('jquery.min.js') }}"></script>
           <script src="{{ asset('adminlte.min.js') }}"></script>
           <script src="https://js.paystack.co/v1/inline.js"></script>
           <script src="{{ asset('paystack.js') }}"></script>
       </body>
+
 </html>
