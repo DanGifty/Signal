@@ -51,7 +51,7 @@
 
                                 <div class="form-group mt-3">
                                     <label class="text-muted text-sm" for="amount">Select Package:</label>
-                                    <select id="amount" required  class="form-control text-lg btn-block">
+                                    <select id="amount" required  class="form-control text-sm btn-block">
                                     {{-- <option value="3">Ghs3.00 for 2GB Expires after 24hrs</option> --}}
                                     <option value="5">Ghs5.00 for 3GB Valid for 24hrs</option>
                                     <option value="5">Gha10 for 7GB valid for 48hrs</option>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="text-center">
-                            <a href="javascript:" class="text-muted text-sm">For Vourchers and Enquires contact : <b>050 557 6038</b></a>
+                            <a href="javascript:" class="text-muted" style="font-size: 12px">For Vourchers and Enquires contact : <b>050 557 6038</b></a>
                             <hr>
                             <div style="font-size: 9px"><a href="mailto:dankwaprince@gmail.com">System Powered by <b>DANKOFF</b></a></div>
                         </div>
