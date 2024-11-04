@@ -3,8 +3,11 @@ var paymentForm = document.getElementById('paymentForm');
 paymentForm.addEventListener('submit', payWithPaystack, false);
 
 function payWithPaystack() {
+
    let  fon =  document.getElementById('phone').value;
    let amt = document.getElementById('amount').value;
+   let action = document.getElementById('btnaction').getAttribute('save-action');
+
 
 
     const now = new Date();
@@ -21,12 +24,10 @@ function payWithPaystack() {
     ref: Math.floor(Math.random() * 1000000000 + 1), // Replace with a reference you generated
 
     callback: function(response) {
-
-
       var reference = response.reference;
 
       // Make an AJAX call to your server with the reference to verify the transaction
-      $.getJSON('https://signalsouth.sbaresultchecker.com/api/fetchwhensuccess' ,{'phone':fon,"amount":amt}, function(data){
+      $.getJSON(action ,{'phone':fon,"amount":amt}, function(data){
         //alert('Payment complete! Voucher Code: ' + data.vourcher);
       });
 
