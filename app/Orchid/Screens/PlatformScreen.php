@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace App\Orchid\Screens;
 
+use App\Models\Vourchers;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
+
+use function PHPSTORM_META\type;
 
 class PlatformScreen extends Screen
 {
@@ -16,7 +19,23 @@ class PlatformScreen extends Screen
      */
     public function query(): iterable
     {
-        return [];
+
+        return [
+            'v_count' => count(Vourchers::all()),
+            'v_sum' => Vourchers::sum('amount'),
+            'v_used'=> Vourchers::where('status', 'USED')->sum('amount'),
+            'v_unused'=> Vourchers::where('status', 'UNUSED')->sum('amount'),
+            'chartData'=>[
+                'labels' => ['Used', 'Unused'],
+                'datasets' => [
+                    [
+                        'label' => 'Vouchers',
+                        'backgroundColor' => ['#007bff', '#dc3545'],
+                        'data' => [Vourchers::where('status', 'USED')->count(), Vourchers::where('status', 'UNUSED')->count()],
+                    ],
+                ],
+            ]
+        ];
     }
 
     /**
@@ -24,7 +43,7 @@ class PlatformScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'Signal';
+        return 'Signal Ghana';
     }
 
     /**
@@ -45,6 +64,10 @@ class PlatformScreen extends Screen
         return [];
     }
 
+
+
+
+
     /**
      * The screen's layout elements.
      *
@@ -53,8 +76,13 @@ class PlatformScreen extends Screen
     public function layout(): iterable
     {
         return [
-            // Layout::view('platform::partials.update-assets'),
-            // Layout::view('platform::partials.welcome'),
+             Layout::view('dashboard.dashboard'),
+
+            Layout::chart('chartData')
+                ->title('Vourchers Status')
+                ->type('bar')
+                ->height(250)
+
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\Dashboard;
 use App\Orchid\Screens\Examples\ExampleActionsScreen;
 use App\Orchid\Screens\Examples\ExampleCardsScreen;
 use App\Orchid\Screens\Examples\ExampleChartsScreen;
@@ -89,3 +90,4 @@ Route::screen('roles', RoleListScreen::class)
 //Vourcher
 Route::screen('vourcher',VourcherListpage::class)->name('platform.vourcher.list');
 Route::screen('vourcher-create',Vourcherpage::class)->name('playform.vourcher.create');
+Route::screen('dashboard',Dashboard::class)->name('platform.dashboard');
