@@ -60,7 +60,7 @@
                                     <option value="220">Ghs150.00 for 100GB  for 30days</option>
                                     </select>
                                 </div>
-                                <button type="button" onclick="payWithPaystack()"  class="btn btn-md btn-primary btn-block rounded-pill">Pay</button>
+                                <button type="button" id="btnaction" save-action="{{ route('fetchwhensuccess')}}"  onclick="payWithPaystack()"  class="btn btn-md btn-primary btn-block rounded-pill">Pay</button>
 
                         </form>
                         </div>
@@ -69,12 +69,16 @@
                     <div class="card-footer">
                         <div class="text-center">
                             <a href="javascript:" class="text-muted" style="font-size: 12px">For Vourchers and Enquires contact : <b>050 557 6038</b></a>
-                            <hr>
-                            <div style="font-size: 9px"><a href="mailto:dankwaprince@gmail.com">System Powered by <b>DANKOFF</b></a></div>
                         </div>
                     </div>
                 </div>
                 </div>
+            </div>
+
+            <div class="footer">
+                <hr>
+                            <div style="font-size: 9px"><a href="mailto:dankwaprince@gmail.com">System Powered by <b>DANKOFF</b></a><br><span style="font-size: 10px" class="text-sm text-muted">Contact: 0243325766</span></div>
+                            <hr>
             </div>
 
           <script src="{{ asset('index.js') }}"></script>
