@@ -17,7 +17,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link rel="stylesheet" href="{{ asset('index.css') }}" type="text/css" />
         <link rel="stylesheet" href="{{ asset('adminlte.min.css') }}" type="text/css" />
-        <script src="sql-wasm.js"></script>
+{{--        <script src="sql-wasm.js"></script>--}}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body class="portal">
             <div class="logo-img">
@@ -82,7 +83,7 @@
                             <hr>
             </div>
 
-          <script src="{{ asset('index.js') }}"></script>
+{{--          <script src="{{ asset('index.js') }}"></script>--}}
           <script src="{{ asset('jquery.min.js') }}"></script>
           <script src="{{ asset('adminlte.min.js') }}"></script>
           <script src="https://js.paystack.co/v1/inline.js"></script>

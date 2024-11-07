@@ -29,6 +29,11 @@ function payWithPaystack() {
       // Make an AJAX call to your server with the reference to verify the transaction
       $.getJSON(action ,{'phone':fon,"amount":amt}, function(data){
         //alert('Payment complete! Voucher Code: ' + data.vourcher);
+          Swal.fire({
+              title: "Completed Successfully!",
+              text: "Voucher Code: " + data.vourcher,
+              icon: "success"
+          });
       });
 
     },
