@@ -25,15 +25,18 @@ class VourcherListTable extends Table
      */
     protected function columns(): iterable
     {
+
         return [
-            TD::make('id', 'ID')->render(fn (Vourchers $vourchers) => $vourchers->id),
+            TD::make('id', 'SN')->render(function(){
+                static $count = 0;
+                return ++$count;
+            }),
             TD::make('voucher', 'Vourcher Code')->render(fn (Vourchers $vourchers) => $vourchers->vourcher),
             TD::make('amount', 'Amount')->render(fn (Vourchers $vourchers) => $vourchers->amount),
             TD::make('user_assigned', 'User')->render(fn (Vourchers $vourchers) => $vourchers->user_assigned),
             TD::make('status', 'Status')->render(fn (Vourchers $vourchers) => $vourchers->status),
-            TD::make('created_at', 'Created')->render(fn (Vourchers $vourchers) => $vourchers->created_at),
-            TD::make('updated_at', 'Updated')->render(fn(Vourchers $vourchers) => $vourchers->updated_at),
-
+            TD::make('created_at', 'Created Date')->render(fn (Vourchers $vourchers) => $vourchers->created_at),
+            TD::make('updated_at', 'Sales Date')->render(fn(Vourchers $vourchers) => $vourchers->updated_at),
         ];
     }
 }
