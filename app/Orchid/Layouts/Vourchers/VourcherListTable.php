@@ -32,6 +32,7 @@ class VourcherListTable extends Table
             TD::make('user_assigned', 'User')->render(fn (Vourchers $vourchers) => $vourchers->user_assigned),
             TD::make('status', 'Status')->render(fn (Vourchers $vourchers) => $vourchers->status),
             TD::make('created_at', 'Created')->render(fn (Vourchers $vourchers) => $vourchers->created_at),
+            TD::make('updated_at', 'Updated')->render(fn(Vourchers $vourchers) => $vourchers->updated_at),
 
         ];
     }
