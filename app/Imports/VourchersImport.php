@@ -33,7 +33,8 @@ class VourchersImport implements OnEachRow, WithHeadingRow
 
     public function onRow($row)
     {
-        $check = Vourchers::where('vourcher', $row['voucher'])->first();
+        $check = Vourchers::where('vourcher', $row['voucher'])
+        ->where('status','USED')->first();
         if($check){
             return $check->update([
                 'vourcher'     => $row['voucher'],
