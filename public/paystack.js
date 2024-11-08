@@ -27,13 +27,21 @@ function payWithPaystack() {
       var reference = response.reference;
 
       // Make an AJAX call to your server with the reference to verify the transaction
-      $.getJSON(action ,{'phone':fon,"amount":amt}, function(data){
+      $.getJSON(action ,{'phone':fon,"amount":amt}, function(response){
         //alert('Payment complete! Voucher Code: ' + data.vourcher);
+        if(response.status == 200){
           Swal.fire({
               title: "Completed Successfully!",
-              text: "Voucher Code: " + data.vourcher,
+              text: "Voucher Code: " + response.data.vourcher,
               icon: "success"
           });
+        }else{
+            Swal.fire({
+              title: "Failed!",
+              text: "Something went wrong. Please try again",
+              icon: "error"
+          });
+        }
       });
 
     },
