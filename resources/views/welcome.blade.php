@@ -51,14 +51,10 @@
                                 </div>
 
                                 <div class="form-group mt-3">
-
                                     <label class="text-muted text-sm" for="amount">Select Package:</label>
                                     <select id="amount" required  class="form-control text-sm btn-block">
-
                                     <option value="">Select Package</option>
-
                                     {!! App\Http\Controllers\ResponseController::getPackage() !!}
-
                                     </select>
                                 </div>
                                 <button type="button" id="btnaction" save-action="{{ route('fetchwhensuccess')}}"  onclick="payWithPaystack()"  class="btn btn-md btn-primary btn-block rounded-pill">Pay</button>
