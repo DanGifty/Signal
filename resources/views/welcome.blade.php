@@ -51,18 +51,11 @@
                                 </div>
 
                                 <div class="form-group mt-3">
-
                                     <label class="text-muted text-sm" for="amount">Select Package:</label>
                                     <select id="amount" required  class="form-control text-sm btn-block">
-
                                     <option value="">Select Package</option>
-                                    <option value="5">Ghs5.00 for 3GB Valid for 24hrs</option>                                  <option value="6">Ghs6.00 for Unlimited access for 12hrs</option>
-                                    <option value="10">Ghs10 for 7GB valid for 48hrs</option>
-                                    <option value="12">Ghs12.00 for Unlimited access for 24hrs</option>
-                                    <option value="65">Ghs65.00 for Unlimited access for 1 week</option>
-                                    <option value="150">Ghs150.00 for 100GB  for 30days</option>
-                                    <option value="150">Ghs150.00 for 100GB  for 30days</option>
-                                </select>
+                                    {!! App\Http\Controllers\ResponseController::getPackage() !!}
+                                    </select>
                                 </div>
                                 <button type="button" id="btnaction" save-action="{{ route('fetchwhensuccess')}}"  onclick="payWithPaystack()"  class="btn btn-md btn-primary btn-block rounded-pill">Pay</button>
 
