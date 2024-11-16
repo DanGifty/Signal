@@ -54,18 +54,15 @@
 
                                     <label class="text-muted text-sm" for="amount">Select Package:</label>
                                     <select id="amount" required  class="form-control text-sm btn-block">
-                                    {{-- <option value="3">Ghs3.00 for 2GB Expires after 24hrs</option> --}}
-                                    {{-- <option value="5">Ghs5.00 for 3GB Valid for 24hrs</option>
-                                    <option value="6">Ghs6.00 for Unlimited access for 12hrs</option>
+
+                                    <option value="">Select Package</option>
+                                    <option value="5">Ghs5.00 for 3GB Valid for 24hrs</option>                                  <option value="6">Ghs6.00 for Unlimited access for 12hrs</option>
                                     <option value="10">Ghs10 for 7GB valid for 48hrs</option>
                                     <option value="12">Ghs12.00 for Unlimited access for 24hrs</option>
                                     <option value="65">Ghs65.00 for Unlimited access for 1 week</option>
-                                    <option value="150">Ghs150.00 for 100GB  for 30days</option> --}}
-                                    <option value="">Select Package</option>
-
-                                    {!! App\Http\Controllers\ResponseController::getPackage() !!}
-
-                                    </select>
+                                    <option value="150">Ghs150.00 for 100GB  for 30days</option>
+                                    <option value="150">Ghs150.00 for 100GB  for 30days</option>
+                                </select>
                                 </div>
                                 <button type="button" id="btnaction" save-action="{{ route('fetchwhensuccess')}}"  onclick="payWithPaystack()"  class="btn btn-md btn-primary btn-block rounded-pill">Pay</button>
 
@@ -84,7 +81,7 @@
 
             <div class="footer">
                 <hr>
-                            <div style="font-size: 9px"><a href="mailto:dankwaprince@gmail.com">System Powered by <b>DANKOFF</b></a><br><span style="font-size: 10px" class="text-sm text-muted">Contact: 0243325766</span></div>
+                            <div style="font-size: 9px"><a href="mailto:dankwaprince@gmail.com">System Powered by <b>DANKOFF</b></a><br><span style="font-size: 8px" class="text-sm text-muted">Contact: 0243325766</span></div>
                             <hr>
             </div>
 
