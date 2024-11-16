@@ -60,32 +60,50 @@ class ResponseController extends Controller
     }
 
     public static function getPackage(){
-        $v = Vourchers::where('status','UNUSED')->get();
+        $v = Vourchers::where('status','UNUSED')->orderBy('amount','asc')->get();
+        $data = [];
         foreach($v as $vs){
             $vCount = Vourchers::where('status','UNUSED')->where('amount',$vs->amount)->count();
-            if($vCount !== 0){
-                return self::showPack($vs->amount);
+            if($vCount > 0){
+                $amounts = array_column($data, 'amount');
+                if (in_array($vs->amount, $amounts)) {
+
+                } else {
+                    $data[] = [
+                        'amount'=>$vs->amount,
+                    ];
+                }
+
             }
         }
+       self::showPack($data);
     }
 
-    private static function showPack($amount){
-        $amount = floatval($amount);
-        switch ($amount) {
-            case 5.0:
-                return '<option value="5">Ghs5.00 for 3GB Valid for 24hrs</option>';
-            case 6.0:
-                return '<option value="6">Ghs6.00 for Unlimited access for 12hrs</option>';
-            case 10.0:
-                return '<option value="10">Ghs10 for 7GB valid for 48hrs</option>';
-            case 12.0:
-                return '<option value="12">Ghs12.00 for Unlimited access for 24hrs</option>';
-            case 65.0:
-                return '<option value="65">Ghs65.00 for Unlimited access for 1 week</option>';
-            case 150.0:
-                return '<option value="150">Ghs150.00 for 100GB for 30days</option>';
-            default:
-                return '<option value="0">No Package Available</option>';
+    private static function showPack($data){
+        foreach($data as $datas){
+            $amount = floatval($datas['amount']);
+            switch ($amount) {
+                case 5.0:
+                    echo '<option value="5">Ghs5.00 for 3GB Valid for 24hrs</option>';
+                    break;
+                case 6.0:
+                    echo '<option value="6">Ghs6.00 for Unlimited access for 12hrs</option>';
+                    break;
+                case 10.0:
+                    echo '<option value="10">Ghs10 for 7GB valid for 48hrs</option>';
+                    break;
+                case 12.0:
+                    echo '<option value="12">Ghs12.00 for Unlimited access for 24hrs</option>';
+                    break;
+                case 65.0:
+                    echo '<option value="65">Ghs65.00 for Unlimited access for 1 week</option>';
+                    break;
+                case 150.0:
+                    echo '<option value="150">Ghs150.00 for 100GB for 30days</option>';
+                    break;
+                default:
+                    echo '<option value="0">No Package Available</option>';
+            }
         }
     }
 }
