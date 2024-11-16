@@ -57,4 +57,5 @@ class ResponseController extends Controller
             return 0;
         }
     }
+
 }
