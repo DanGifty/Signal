@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Vourchers;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -57,5 +58,6 @@ class ResponseController extends Controller
             return 0;
         }
     }
+
 
 }
