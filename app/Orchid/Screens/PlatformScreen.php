@@ -25,6 +25,10 @@ class PlatformScreen extends Screen
             'v_sum' => Vourchers::sum('amount'),
             'v_used'=> Vourchers::where('status', 'USED')->sum('amount'),
             'v_unused'=> Vourchers::where('status', 'UNUSED')->sum('amount'),
+
+            'v3u'=> Vourchers::where('status', 'USED')->where('amount', 3)->count(),
+            'v3un'=> Vourchers::where('status', 'UNUSED')->where('amount', 3)->count(),
+
             'v5u'=> Vourchers::where('status', 'USED')->where('amount', 5)->count(),
             'v5un'=> Vourchers::where('status', 'UNUSED')->where('amount', 5)->count(),
             'v6u'=> Vourchers::where('status', 'USED')->where('amount', 6)->count(),

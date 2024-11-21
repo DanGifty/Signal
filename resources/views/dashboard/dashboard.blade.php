@@ -80,6 +80,26 @@
                     <div class="card h-100 bg-orange-300">
                         <div class="card-header">
                             <div class="d-flex justify-content-between mb-3">
+                                <h5 class="card-title mb-0">Ghs3 Count: {{ ($v3un + $v3u) }}</h5>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                USED:<h4> {{ $v3u}}</h4><br>
+                                UNUSED: <h4>{{ $v3un}}</h4><br>
+                             </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                    TOTAL: <h4>{{ ($v3un + $v3u)*3 }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 mb-4 col-lg-7 col-12">
+                    <div class="card h-100 bg-orange-300">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between mb-3">
                                 <h5 class="card-title mb-0">Ghs5 Count: {{ ($v5un + $v5u) }}</h5>
                             </div>
                         </div>
