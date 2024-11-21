@@ -85,7 +85,7 @@ class ResponseController extends Controller
             $amount = floatval($datas['amount']);
             switch ($amount) {
                 case 3.0:
-                    echo '<option value="3">Ghs5.00 for 1.5GB Valid for 24hrs</option>';
+                    echo '<option value="3">Ghs3.00 for 1.5GB Valid for 24hrs</option>';
                     break;
                 case 5.0:
                     echo '<option value="5">Ghs5.00 for 1GB Non-Expiring</option>';
