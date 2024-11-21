@@ -59,6 +59,7 @@ class ResponseController extends Controller
         }
     }
 
+
     public static function getPackage(){
         $v = Vourchers::where('status','UNUSED')->orderBy('amount','asc')->get();
         $data = [];
@@ -109,4 +110,5 @@ class ResponseController extends Controller
             }
         }
     }
+
 }
