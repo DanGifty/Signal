@@ -84,14 +84,17 @@ class ResponseController extends Controller
         foreach($data as $datas){
             $amount = floatval($datas['amount']);
             switch ($amount) {
+                case 3.0:
+                    echo '<option value="3">Ghs5.00 for 1.5GB Valid for 24hrs</option>';
+                    break;
                 case 5.0:
-                    echo '<option value="5">Ghs5.00 for 3GB Valid for 24hrs</option>';
+                    echo '<option value="5">Ghs5.00 for 1GB Non-Expiring</option>';
                     break;
                 case 6.0:
                     echo '<option value="6">Ghs6.00 for Unlimited access for 12hrs</option>';
                     break;
                 case 10.0:
-                    echo '<option value="10">Ghs10 for 7GB valid for 48hrs</option>';
+                    echo '<option value="10">Ghs10 for 3GB Non-Expiring</option>';
                     break;
                 case 12.0:
                     echo '<option value="12">Ghs12.00 for Unlimited access for 24hrs</option>';
@@ -99,8 +102,8 @@ class ResponseController extends Controller
                 case 65.0:
                     echo '<option value="65">Ghs65.00 for Unlimited access for 1 week</option>';
                     break;
-                case 150.0:
-                    echo '<option value="150">Ghs150.00 for 100GB for 30days</option>';
+                case 250.0:
+                    echo '<option value="250">Ghs250.00 for unlimited Access for 30days</option>';
                     break;
                 default:
                     echo '<option value="0">No Package Available</option>';
